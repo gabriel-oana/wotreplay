@@ -6,7 +6,7 @@
 [![Downloads](https://pepy.tech/badge/wotreplay)](https://pepy.tech/project/wotreplay)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 <img src="https://img.shields.io/pypi/dm/wotreplay?label=pypi%20downloads">
-[![codecov](https://codecov.io/gh/gabriel-oana/wotapi/branch/main/graph/badge.svg?token=YASHY79YAF)](https://codecov.io/gh/gabriel-oana/wotapi)
+[![codecov](https://codecov.io/gh/gabriel-oana/wotreplay/branch/main/graph/badge.svg?token=08F8TY2J77)](https://codecov.io/gh/gabriel-oana/wotreplay)
 </span>
 
 # World of Tanks - Replay data extract
