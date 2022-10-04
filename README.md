@@ -1,9 +1,13 @@
-[![pipeline status](https://gitlab.com/gabriel_oana/wotreplay/badges/master/pipeline.svg)](https://gitlab.com/gabriel_oana/wotreplay)
-[![pipeline status](https://gitlab.com/gabriel_oana/wotreplay/badges/master/coverage.svg)](https://gitlab.com/gabriel_oana/wotreplay)
+<span><img src="https://img.shields.io/github/workflow/status/gabriel-oana/wotreplay/Tests">
+<img src="https://img.shields.io/github/languages/top/gabriel-oana/wotreplay">
+<img src="https://img.shields.io/pypi/pyversions/wotreplay">
+<img src="https://img.shields.io/pypi/v/wotreplay">
+<img src="https://img.shields.io/badge/linting-pylint-green">
+[![Downloads](https://pepy.tech/badge/wotreplay)](https://pepy.tech/project/wotreplay)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/wotreplay)](https://pypistats.org/packages/wotreplay)
-![PyPI](https://img.shields.io/pypi/v/wotreplay)
-![PyPI - Status](https://img.shields.io/pypi/status/wotreplay)
+<img src="https://img.shields.io/pypi/dm/wotreplay?label=pypi%20downloads">
+[![codecov](https://codecov.io/gh/gabriel-oana/wotapi/branch/main/graph/badge.svg?token=YASHY79YAF)](https://codecov.io/gh/gabriel-oana/wotapi)
+</span>
 
 # World of Tanks - Replay data extract
 
@@ -19,14 +23,14 @@ The replays should be set to be "all" collected and not "last" one recorded.
 
 All data extracted can be saved to a local sqlite database. 
 ### 2. Usage
-```
+```shell
 pip install wotreplay
 ```
 
 The package provides the possibility of exploring the data contained within one replay or process all replays in a 
 directory and store the data in a local database.
 
-```
+```python
 from wotreplay import ReplayData
 replay = ReplayData(file_path='path_to_replay/replay_file.wotreplay',
                      db_path='', db_name='', load=False)
@@ -41,11 +45,11 @@ print(replay.battle_xp)
 
 Process all the replay files and store the results in the database
 
-```
+```python
 from wotreplay import ProcessReplays
 
 ProcessReplays.process_all(replay_dir='/path/to/replay/dir', 
-                           db_path='path/where/to/save/the/database, 
+                           db_path='path/where/to/save/the/database', 
                            db_name='wotreplay')
 ```
 This will process the replays sequentially. 
@@ -81,12 +85,12 @@ No replays before 0.9.21 have been tested due to lack of replays available.
 ### 4. Data Taxonomy
 Examples of data retrieved: 
 
-* Battle metadata: [Battle Metadata Fields](https://gitlab.com/gabriel_oana/wotreplay/-/blob/master/taxonomy/battle_metadata.json)
-* Battle performance: [Battle Performance Fields](https://gitlab.com/gabriel_oana/wotreplay/-/blob/master/taxonomy/battle_performance.json)
-* Common: [Common Data Fields](https://gitlab.com/gabriel_oana/wotreplay/-/blob/master/taxonomy/common.json)
-* Battle frags: [Battle Frags Fields](https://gitlab.com/gabriel_oana/wotreplay/-/blob/master/taxonomy/battle_frags.json)
-* Battle economy: [Battle Economy Fields](https://gitlab.com/gabriel_oana/wotreplay/-/blob/master/taxonomy/battle_economy.json)
-* Battle xp: [Battle XP Fields](https://gitlab.com/gabriel_oana/wotreplay/-/blob/master/taxonomy/battle_xp.json)
+* Battle metadata: [Battle Metadata Fields](https://github.com/gabriel-oana/wotreplay/blob/main/taxonomy/battle_metadata.json)
+* Battle performance: [Battle Performance Fields](https://github.com/gabriel-oana/wotreplay/blob/main/taxonomy/battle_performance.json)
+* Common: [Common Data Fields](https://github.com/gabriel-oana/wotreplay/blob/main/taxonomy/common.json)
+* Battle frags: [Battle Frags Fields](https://github.com/gabriel-oana/wotreplay/blob/main/taxonomy/battle_frags.json)
+* Battle economy: [Battle Economy Fields](https://github.com/gabriel-oana/wotreplay/blob/main/taxonomy/battle_economy.json)
+* Battle xp: [Battle XP Fields](https://github.com/gabriel-oana/wotreplay/blob/main/taxonomy/battle_xp.json)
 
 ### 5.Access and rights
 If you are using this on any online tools please give the appropriate credit.    
@@ -97,16 +101,17 @@ There are a few features to be created in the future to create the aliases of ta
 
 ### 7. Development
 
-##### Unittesting
-For development purposes, the unittests can be executed via: 
+### 5. Development
+To further develop this package please follow the instructions below
 
-```
-python3 -m unittest discover -v worldoftanks/tests
-```
+```shell
 
-##### Coverage Tests
+# Install the virtual environments and packages
+python3 -m virtualenv .venv
+source .venv/bin/activate
+pip3 install -r requirements.txt
 
-```
-coverage run --source=worldoftanks -m unittest discover -s worldoftanks/tests
-coverage report -m
+# Run test suite
+# Tests contain unittests, coverage and linting
+tox
 ```
