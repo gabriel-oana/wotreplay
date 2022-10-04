@@ -1,0 +1,13 @@
+{
+  "fields": [
+    "id",
+    "loaded_at",
+    "account_id",
+    "file_id",
+    "replay_date",
+    "filename",
+    "is_replay_complete",
+    "processed",
+    "processing_time"
+  ]
+}

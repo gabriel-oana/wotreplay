@@ -1,0 +1,1 @@
+from wotreplay.wotreplay import ReplayData, ProcessReplays

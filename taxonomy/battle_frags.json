@@ -1,0 +1,21 @@
+{
+  "fields": [
+    "id",
+    "loaded_at",
+    "account_id",
+    "file_id",
+    "replay_date",
+    "player_id",
+    "fake_name",
+    "team",
+    "vehicle_type",
+    "vehicle_tag",
+    "vehicle_nation",
+    "is_alive",
+    "forbid_in_battle_invitations",
+    "igr_type",
+    "is_team_killer",
+    "name",
+    "frags"
+  ]
+}

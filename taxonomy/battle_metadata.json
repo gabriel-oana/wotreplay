@@ -1,0 +1,24 @@
+{
+  "fields": [
+    "id",
+    "loaded_at",
+    "account_id",
+    "file_id",
+    "replay_date",
+    "player_vehicle",
+    "nation",
+    "tank_tag",
+    "version",
+    "client_version",
+    "client_version_executable",
+    "region_code",
+    "server_name",
+    "map_display_name",
+    "date_time",
+    "map_name",
+    "gameplay_id",
+    "battle_type",
+    "has_mods",
+    "player_name",
+  ]
+}

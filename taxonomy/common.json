@@ -1,0 +1,19 @@
+{
+  "fields":[
+    "id",
+    "loaded_at",
+    "account_id",
+    "file_id",
+    "replay_date",
+    "division",
+    "finish_reason",
+    "gui_type",
+    "arena_create_time",
+    "duration",
+    "arena_type_id",
+    "gas_attack_winner_team",
+    "winner_team",
+    "veh_lock_mode",
+    "bonus_type"
+  ]
+}
