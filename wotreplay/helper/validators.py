@@ -13,7 +13,7 @@ class Validator:
 
         file_id = DataHandler.query_file_id(model=model, filename=file, db_name=db_name, db_path=db_path)
         if file_id:
-            raise Exception('File was processed before and will not be re-processed.')
+            raise FileExistsError('File was processed before and will not be re-processed.')
 
     @staticmethod
     def check_if_file_exists(file: str):

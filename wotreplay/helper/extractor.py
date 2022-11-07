@@ -82,7 +82,6 @@ class Extractor:
         """
         Extracts all the parameters required to fill the model from the battle data.
         """
-
         raw_data = data[0]['personal']
         battle_id = list(raw_data.keys())[0]
 
