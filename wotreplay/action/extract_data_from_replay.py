@@ -51,6 +51,11 @@ class Replay:
         self._assign_replay_date()
         self._assign_account_id()
 
+    def _evaluate_replay(self):
+        if len(self.battle_data) == 0:
+            raise RuntimeError(f"{self.file} replay is not complete. "
+                               f"Only the 'battle metadata' is available from incomplete replays")
+
     def _extract_data(self):
         """
         Extract data from one single replay.
@@ -81,7 +86,6 @@ class Replay:
         """
         Extracts and loads
         """
-
         battle_metadata = Extractor.get_replay_metadata(data=self.meta_data, account_id=self.account_id,
                                                         file_id=self.file_id, replay_date=self.replay_date)
 
@@ -94,6 +98,7 @@ class Replay:
         """
         Extracts the battle performance data
         """
+        self._evaluate_replay()
         performance = Extractor.get_battle_performance(data=self.battle_data, account_id=self.account_id,
                                                        file_id=self.file_id, replay_date=self.replay_date)
 
@@ -103,6 +108,7 @@ class Replay:
         return performance
 
     def get_common(self):
+        self._evaluate_replay()
         common = Extractor.get_common(data=self.battle_data, account_id=self.account_id, file_id=self.file_id,
                                       replay_date=self.replay_date)
 
@@ -112,6 +118,7 @@ class Replay:
         return common
 
     def get_battle_frags(self):
+        self._evaluate_replay()
         players = Extractor.get_battle_frags(data=self.battle_data, account_id=self.account_id, file_id=self.file_id,
                                              replay_date=self.replay_date)
 
@@ -121,6 +128,7 @@ class Replay:
         return players
 
     def get_battle_economy(self):
+        self._evaluate_replay()
         economy = Extractor.get_battle_economy(data=self.battle_data, account_id=self.account_id, file_id=self.file_id,
                                                replay_date=self.replay_date)
 
@@ -130,6 +138,7 @@ class Replay:
         return economy
 
     def get_battle_xp(self):
+        self._evaluate_replay()
         xp = Extractor.get_battle_xp(data=self.battle_data, account_id=self.account_id, file_id=self.file_id,
                                      replay_date=self.replay_date)
 

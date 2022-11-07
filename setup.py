@@ -10,7 +10,7 @@ with open(os.path.join(HERE, "README.md")) as fid:
     README = fid.read()
 
 setup(name='wotreplay',
-      version='1.0.1',
+      version='1.0.2',
       description='World of Tanks PC replay data extractor',
       author='Gabriel Oana',
       author_email='gabriel.oana91@gmail.com',

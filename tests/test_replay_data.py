@@ -5,7 +5,7 @@ from wotreplay.wotreplay import ReplayData
 
 class TestReplayData(unittest.TestCase):
 
-    replay = ReplayData(file_path='replay_data/test.wotreplay', db_name='', db_path='', load=False)
+    replay = ReplayData(file_path='replay_data/v1.9/full.wotreplay', db_name='', db_path='', load=False)
 
     def test_battle_metadata(self):
         battle_metadata = self.replay.battle_metadata

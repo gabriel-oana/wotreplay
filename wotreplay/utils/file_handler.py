@@ -13,7 +13,6 @@ class FileHandler:
         """
 
         replay_files = glob.glob(path + '/*.wotreplay')
-
         return replay_files
 
     @staticmethod
@@ -23,7 +22,6 @@ class FileHandler:
         :param file: world of tanks replay file
         :return: string object
         """
-
         with io.open(file, 'r', encoding='utf-8', errors='ignore') as infile:
             for idx, line in enumerate(infile):
                 if idx == 0:
@@ -38,5 +36,4 @@ class FileHandler:
                                 raw_data.append(letter)
 
         raw_data = ''.join(raw_data)
-
         return raw_data
